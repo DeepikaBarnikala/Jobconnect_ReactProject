@@ -4,7 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Map, List } from "lucide-react";
 
 import api from "../services/api";
-import JobCard from "../components/JobCard";
+import JobCard from "../components/Jobcard";
 import JobMap from "../components/JobMap";
 
 function Jobs() {

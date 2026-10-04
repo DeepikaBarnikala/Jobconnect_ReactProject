@@ -836,6 +836,5 @@
       "id": "sPSIihzLVms"
     }
   ],
-  "savedJobs": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  "savedJobs": []
 }
