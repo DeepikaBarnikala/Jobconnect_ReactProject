@@ -178,10 +178,15 @@ JobConnect provides basic user authentication functionality.
 Users can:
 
 Register
+
 Login
+
 Logout
+
 Access authenticated features
+
 Access protected routes
+
 Receive error messages for invalid login details
 
 The application also performs input validation for registration and login forms.
@@ -191,28 +196,48 @@ The application also performs input validation for registration and login forms.
 The basic authentication flow is:
 
 New User
+
    ↓
+   
 Register
+
    ↓
+   
 Account Created
+
    ↓
+   
 Login
+
    ↓
+   
 Credentials Checked
+
    ↓
+   
 Successful Login
+
    ↓
+   
 Application Access
+
 
 If invalid credentials are entered:
 
 Login
+
    ↓
+   
 Credentials Checked
+
    ↓
+   
 Invalid Credentials
+
    ↓
+   
 Error Message
+
 
 -->🛡️ Protected Routes
 
@@ -260,19 +285,33 @@ It retrieves job information from the backend API and displays the available job
 A job can contain information such as:
 
 Job title
+
 Company
+
 Location
+
 Job type
+
 Work mode
+
 Experience
+
 Salary
+
 Category
+
 Skills
+
 Requirements
+
 Description
+
 Application deadline
+
 Posted date
+
 Rating
+
 
 -->🧾 Job Card
 
@@ -287,9 +326,13 @@ The JobCard component is responsible for displaying important job information in
 Typical actions include:
 
 View Details
+
 Save Job
+
 Edit
+
 Delete
+
 
 Using a reusable component means the same component can be used for multiple jobs.
 
@@ -304,7 +347,9 @@ The application uses a dynamic route:
 For example:
 
 /jobs/1
+
 /jobs/2
+
 /jobs/3
 
 The ID identifies which job should be displayed.
@@ -312,17 +357,29 @@ The ID identifies which job should be displayed.
 The Job Details page can display:
 
 Job title
+
 Company
+
 Location
+
 Job type
+
 Work mode
+
 Experience
+
 Salary
+
 Skills
+
 Requirements
+
 Description
+
 Application deadline
+
 Other job-related information
+
 
 -->➕ Add Job
 
@@ -331,17 +388,29 @@ The Add Job feature allows job information to be created through a form.
 The form contains fields such as:
 
 Job title
+
 Company
+
 Location
+
 Job type
+
 Experience
+
 Salary
+
 Category
+
 Work mode
+
 Description
+
 Skills
+
 Requirements
+
 Application deadline
+
 
 After submitting the form, the information is sent to the backend.
 
@@ -354,16 +423,27 @@ Existing job information can be edited.
 When the user selects the Edit option:
 
 Existing Job
+
      ↓
+     
 Edit Page
+
      ↓
+     
 Existing Data Loaded
+
      ↓
+     
 User Makes Changes
+
      ↓
+     
 Submit
+
      ↓
+     
 Backend Updated
+
 
 The application uses the job ID to identify the correct job.
 
@@ -392,8 +472,11 @@ The Save Job functionality is implemented using Redux Toolkit.
 Users can:
 
 Save a job
+
 View saved jobs
+
 Remove a saved job
+
 
 The Saved Jobs feature demonstrates the use of global state management.
 
@@ -413,16 +496,26 @@ savedJobsSlice.js
 The data flow is:
 
 User clicks Save
+
        ↓
+       
 Dispatch Action
+
        ↓
+       
 Redux Slice
+
        ↓
 Redux Store
+
        ↓
+       
 Updated Global State
+
        ↓
+       
 Saved Jobs Page
+
 
 -->🏪 Redux Store
 
@@ -479,16 +572,26 @@ It helps organize different stages or events related to an application.
 The concept can be represented as:
 
 Application
+
      ↓
+     
 Applied
+
      ↓
+     
 Shortlisted
+
      ↓
+     
 Interview
+
      ↓
+     
 Result
 
+
 The timeline provides a more organized way to understand application progress.
+
 
 -->📅 Interview Scheduler
 
@@ -498,6 +601,7 @@ The feature is designed to help users keep track of interview information and up
 
 This extends the application beyond simple job searching.
 
+
 -->📈 Career Analytics
 
 The Career Analytics section provides a dedicated area for career-related information and progress.
@@ -505,6 +609,7 @@ The Career Analytics section provides a dedicated area for career-related inform
 The purpose of this feature is to help users understand their activity and progress in a more organized way.
 
 This feature also demonstrates how a React application can present structured information through a dedicated interface.
+
 
 -->🗺️ Career Roadmap
 
@@ -515,22 +620,34 @@ Instead of focusing only on individual job opportunities, the application also p
 The roadmap concept can help users think about:
 
 Current Skills
+
       ↓
+      
 Learning
+
       ↓
+      
 Practice
+
       ↓
+      
 Projects
+
       ↓
+      
 Experience
+
       ↓
+      
 Career Opportunities
+
 
 -->👤 Profile
 
 The Profile page provides a dedicated area for user-related information.
 
 Separating profile information from the job-search interface keeps the application organized.
+
 
 -->🗺️ Job Map
 
@@ -544,6 +661,7 @@ The purpose of the component is to provide a location-oriented representation of
 
 This introduces the concept of integrating location-based information into a React application.
 
+
 -->🌐 REST API
 
 JobConnect uses a REST-style API through JSON Server.
@@ -552,19 +670,34 @@ The frontend communicates with the backend using HTTP requests.
 
 The basic architecture is:
 
+
 React Frontend
+
       ↓
+      
     Axios
+    
       ↓
+      
  HTTP Request
+ 
       ↓
+      
  JSON Server
+ 
       ↓
+      
    db.json
+   
       ↓
+      
  HTTP Response
+ 
       ↓
+      
  React Application
+
+ 
 🔌 Axios
 
 Axios is used for API communication.
@@ -576,8 +709,11 @@ src/services/api.js
 Common Axios methods used in the project include:
 
 api.get()
+
 api.post()
+
 api.put()
+
 api.delete()
 
 🔄 CRUD Operations
@@ -585,9 +721,13 @@ api.delete()
 CRUD stands for:
 
 Operation	Meaning	JobConnect Example
+
 C	Create	Add Job
+
 R	Read	View Jobs
+
 U	Update	Edit Job
+
 D	Delete	Delete Job
 
 CRUD is one of the major concepts demonstrated by this project.
@@ -614,37 +754,69 @@ The advantage of JSON Server for this project is that it allows the React fronte
 JobConnect covers many important React concepts.
 
 Core React
+
 React components
+
 JSX
+
 Props
+
 State
+
 Functional components
+
 Component reusability
+
 Conditional rendering
+
 List rendering
+
 Event handling
+
 React Hooks
+
 useState
+
 useEffect
+
 Forms
+
 Controlled components
+
 Form state
+
 Input handling
+
 Form submission
+
 Validation
+
 Error handling
+
 Component Communication
+
 Parent-to-child data flow
+
 Props
+
 Callback functions
+
 Shared state
+
 API Integration
+
 Fetching API data
+
 Sending data
+
 Updating data
+
 Deleting data
+
 Handling responses
+
 Handling errors
+
 
 🧭 React Router Concepts Covered
 
@@ -653,32 +825,52 @@ The project uses React Router DOM.
 Important concepts include:
 
 BrowserRouter
+
 Routes
+
 Route
+
 Link
+
 Navigation
+
 Dynamic routes
+
 URL parameters
+
 Protected routes
+
 Programmatic navigation
+
 
 Example dynamic route:
 
 /jobs/:id
 
+
 🔐 Authentication Concepts Covered
+
 
 The authentication system introduces:
 
 Registration
+
 Login
+
 Logout
+
 User data
+
 Credential validation
+
 Form validation
+
 Authentication state
+
 Protected routes
+
 Redirecting unauthenticated users
+
 
 🧠 State Management Concepts Covered
 
@@ -691,10 +883,15 @@ React's useState is used for component-level data.
 Examples:
 
 Form fields
+
 Loading state
+
 Error messages
+
 Job lists
+
 Global State
+
 
 Redux Toolkit is used when data needs to be shared across components.
 
@@ -1236,116 +1433,199 @@ The project was developed step by step.
 Phase 1 – Project Setup
 -----------------------
 
+
 Install Node.js
+
       ↓
+      
 Create Vite Project
+
       ↓
+      
 Install Dependencies
+
       ↓
+      
 Start React Application
+
 
 Phase 2 – Basic UI
 --------------------
 
 Create App
+
      ↓
+     
 Create Navbar
+
      ↓
+     
 Create Home Page
+
      ↓
+     
 Create Basic CSS
+
 
 Phase 3 – Routing
 -------------------
 
 Install React Router
+
         ↓
+        
 Create Routes
+
         ↓
+        
 Create Multiple Pages
+
         ↓
+        
 Connect Navigation
+
 
 Phase 4 – Authentication
 -------------------------
 
 Register
+
    ↓
+   
 Login
+
    ↓
+   
 Logout
+
    ↓
+   
 Authentication
+
    ↓
+   
 Protected Routes
+
 
 Phase 5 – Backend Integration
 -----------------------------
+
 Create db.json
+
        ↓
+       
 Install JSON Server
+
        ↓
+       
 Create Axios Service
+
        ↓
+       
 Connect React with API
+
 
 Phase 6 – Job Management
 --------------------------
 
 Fetch Jobs
+
     ↓
+    
 Display Jobs
+
     ↓
+    
 Job Details
+
     ↓
+    
 Add Job
+
     ↓
+    
 Edit Job
+
     ↓
+    
 Delete Job
+
 
 Phase 7 – Redux
 ----------------
 
 Install Redux Toolkit
+
        ↓
+       
 Create Store
+
        ↓
+       
 Create Slice
+
        ↓
+       
 Connect Provider
+
        ↓
+       
 Save Jobs
+
        ↓
+
+       
 Saved Jobs Page
 
 Phase 8 – Career Management
 ---------------------------
+
 Dashboard
+
     ↓
+    
 Application Tracker
+
     ↓
+    
 Application Timeline
+
     ↓
+    
 Interview Scheduler
+
     ↓
+    
 Career Analytics
+
     ↓
+    
 Career Roadmap
+
     ↓
+    
 Profile
+
 
 Phase 9 – UI Improvements
 -------------------------
 
 Custom CSS
+
      ↓
+     
 Professional Layout
+
      ↓
+     
 Cards and Sections
+
      ↓
+     
 Responsive Design
+
      ↓
+     
 Mobile Support
 
 
@@ -1434,22 +1714,39 @@ Different technologies and concepts work together.
 For example:
 
 React
+
   ↓
+  
 Components
+
   ↓
+  
 State
+
   ↓
+  
 Router
+
   ↓
+  
 API
+
   ↓
+  
 Backend
+
   ↓
+  
 Redux
+
   ↓
+  
 User Interaction
+
   ↓
+  
 Complete Application
+
 
 Through JobConnect, I gained practical experience in:
 
@@ -1475,6 +1772,8 @@ Responsive CSS
 Debugging
 Git
 GitHub
+
+
 🚀 Future Enhancements
 
 The current project can be expanded significantly in the future.
