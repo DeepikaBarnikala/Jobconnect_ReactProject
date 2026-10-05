@@ -1102,66 +1102,129 @@ Responsive Design-->UI that adapts to different screen sizes
 
 The project covers the following major technical areas:
 
-React.js
+React.js:
+---------
 Components
+
 JSX
+
 Props
+
 State
+
 Hooks
+
 useState
+
 useEffect
+
 Event Handling
+
 Conditional Rendering
+
 List Rendering
+
 Forms
+
 Controlled Components
+
 Component Reusability
-React Router
+
+React Router:
+--------------
+
 BrowserRouter
+
 Routes
+
 Route
+
 Link
+
 Dynamic Routes
+
 URL Parameters
+
 Navigation
+
 Protected Routes
+
 Programmatic Navigation
-Redux Toolkit
+
+Redux Toolkit:
+---------------
+
 Store
+
 Slice
+
 Actions
+
 Reducers
+
 Dispatch
+
 Selectors
+
 Global State
+
 Redux Provider
-API Development
+
+API Development:
+------------------
 REST API
+
 HTTP
+
 GET
+
 POST
+
 PUT
+
 DELETE
+
 Axios
+
 JSON Server
+
 JSON data
-Application Development
+
+Application Development:
+------------------------
 Authentication
+
 Validation
+
 CRUD
+
 Error Handling
+
 State Management
+
 Responsive Design
+
 Component Architecture
+
 API Integration
+
 Debugging
-Development Tools
+
+Development Tools:
+--------------------
+
 Node.js
+
 npm
+
 Vite
+
 ESLint
+
 Git
+
 GitHub
+
 VS Code
 
 -------------------------------------------------------------------------------------------------------------------------
