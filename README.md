@@ -54,20 +54,35 @@ The project helped me move from:
 
 
 Learning individual React concepts
+
              ↓
+             
 Building small components
+
              ↓
+             
 Connecting components
+
              ↓
+             
 Managing application state
+
              ↓
+             
 Connecting APIs
+
              ↓
+             
 Handling authentication
+
              ↓
+             
 Managing CRUD operations
+
              ↓
+             
 Building a complete application
+
 
 The application is designed around a common real-world problem:
 
@@ -84,13 +99,21 @@ Job searching can involve multiple activities.
 A user may need to:
 
 *Search for jobs
+
 *Check job details
+
 *Save interesting jobs
+
 *Remember which jobs they applied for
+
 *Track application progress
+
 *Keep track of interviews
+
 *Understand their career progress
+
 *Plan future career development
+
 When these activities are handled manually or across different platforms, it can become difficult to organize everything.
 
 JobConnect was designed as a learning project to provide a centralized interface for these activities.
@@ -115,6 +138,7 @@ The application provides:
 
 This makes the application more than a simple job-listing project.
 It combines job discovery + job management + career management.
+
 ---------------------------------------------------------------------------------------------------
 🎯 Project Objectives
 
@@ -491,6 +515,7 @@ src/redux/
 Important files include:
 
 store.js
+
 savedJobsSlice.js
 
 The data flow is:
@@ -910,23 +935,41 @@ src/App.css
 The UI includes styling for:
 
 Navbar
+
 Logo
+
 Navigation links
+
 Buttons
+
 Hero section
+
 Search section
+
 Job cards
+
 Job details
+
 Forms
+
 Dashboard
+
 Career pages
+
 Saved jobs
+
 Responsive layouts
+
 Mobile navigation
+
 Hover effects
+
 Cards
+
 Sections
+
 Spacing
+
 Typography
 
 📱 Responsive Design
@@ -938,8 +981,11 @@ Responsive layouts are handled using CSS media queries.
 The application is intended to work across:
 
 Desktop
+
 Laptop
+
 Tablet
+
 Mobile devices
 
 Responsive design is important because users may access job portals from different devices.
@@ -948,56 +994,107 @@ Responsive design is important because users may access job portals from differe
 
 🏗️ Project Folder Structure
 
+
 jobconnect/
+
 │
+
 ├── public/
+
 │
+
 ├── src/
+
 │   │
+
 │   ├── assets/
+
 │   │
+
 │   ├── components/
+
 │   │   ├── JobCard.jsx
+
 │   │   ├── JobMap.jsx
+
 │   │   ├── Navbar.jsx
+
 │   │   └── Protectedroute.jsx
+
 │   │
+
 │   ├── pages/
+
 │   │   ├── Addjob.jsx
+
 │   │   ├── ApplicationTimeline.jsx
+
 │   │   ├── ApplicationTracker.jsx
+
 │   │   ├── CareerAnalytics.jsx
+
 │   │   ├── CareerRoadmap.jsx
+
 │   │   ├── Dashboard.jsx
+
 │   │   ├── Home.jsx
+
 │   │   ├── InterviewScheduler.jsx
+
 │   │   ├── JobDetails.jsx
+
 │   │   ├── Jobs.jsx
+
 │   │   ├── Login.jsx
+
 │   │   ├── Profile.jsx
+
 │   │   ├── Register.jsx
+
 │   │   └── SavedJobs.jsx
+
 │   │
+
 │   ├── redux/
+
 │   │   ├── savedJobsSlice.js
+
 │   │   └── store.js
+
 │   │
+
 │   ├── routes/
+
 │   │   └── AppRoutes.jsx
+
 │   │
+
 │   ├── services/
+
 │   │   └── api.js
+
 │   │
+
 │   ├── App.jsx
+
 │   ├── App.css
+
 │   ├── index.css
+
 │   └── main.jsx
+
 │
+
 ├── db.json
+
 ├── index.html
+
 ├── package.json
+
 ├── package-lock.json
+
 ├── vite.config.js
+
 └── README.md
 
 ---------------------------------------------------------------------------------------------------
