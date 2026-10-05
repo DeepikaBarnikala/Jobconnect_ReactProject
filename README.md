@@ -751,7 +751,6 @@ Responsive design is important because users may access job portals from differe
 
 🏗️ Project Folder Structure
 
-**
 jobconnect/
 │
 ├── public/
@@ -803,7 +802,6 @@ jobconnect/
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
-**
 
 ---------------------------------------------------------------------------------------------------
 📂 Folder Responsibilities
@@ -1058,26 +1056,48 @@ MongoDB / PostgreSQL
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 🧠 Important Technical Terms
-Term	Meaning
-UI	User Interface
-UX	User Experience
-API	Application Programming Interface
-REST	Representational State Transfer
-HTTP	Hypertext Transfer Protocol
-CRUD	Create, Read, Update, Delete
-JSX	JavaScript XML
-DOM	Document Object Model
-SPA	Single Page Application
-URL	Uniform Resource Locator
-JSON	JavaScript Object Notation
-API Endpoint	URL used to access API resources
-State	Data that can change during application execution
-Props	Data passed from parent to child component
-Component	Reusable UI building block
-Hook	React function used to access React features
-Middleware	Software layer between application components
-Repository	Project stored using Git
-Responsive Design	UI that adapts to different screen sizes
+Term	Meaning:
+
+UI-->User Interface
+
+UX-->User Experience
+
+API-->Application Programming Interface
+
+REST-->Representational State Transfer
+
+HTTP-->Hypertext Transfer Protocol
+
+CRUD-->Create, Read, Update, Delete
+
+JSX	-->JavaScript XML
+
+DOM-->Document Object Model
+
+SPA-->Single Page Application
+
+URL-->Uniform Resource Locator
+
+JSON-->JavaScript Object Notation
+
+API Endpoint-->URL used to access API resources
+
+State-->	Data that can change during application execution
+
+Props-->Data passed from parent to child component
+
+Component-->Reusable UI building block
+
+Hook-->React function used to access React features
+
+Middleware-->Software layer between application components
+
+Repository-->Project stored using Git
+
+Responsive Design-->UI that adapts to different screen sizes
+
+---------------------------------------------------------------------------------------------------
+
 📚 Learning Areas Covered
 
 The project covers the following major technical areas:
