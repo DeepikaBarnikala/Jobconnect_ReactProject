@@ -750,6 +750,8 @@ Responsive design is important because users may access job portals from differe
 ---------------------------------------------------------------------------------------------
 
 🏗️ Project Folder Structure
+
+**
 jobconnect/
 │
 ├── public/
@@ -801,6 +803,7 @@ jobconnect/
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
+**
 
 ---------------------------------------------------------------------------------------------------
 📂 Folder Responsibilities
@@ -1052,6 +1055,8 @@ Express.js
 REST API
      ↓
 MongoDB / PostgreSQL
+
+---------------------------------------------------------------------------------------------------------------------------------------
 🧠 Important Technical Terms
 Term	Meaning
 UI	User Interface
@@ -1138,11 +1143,16 @@ ESLint
 Git
 GitHub
 VS Code
+
+-------------------------------------------------------------------------------------------------------------------------
+
 🧭 Development Journey
 
 The project was developed step by step.
 
 Phase 1 – Project Setup
+-----------------------
+
 Install Node.js
       ↓
 Create Vite Project
@@ -1150,7 +1160,10 @@ Create Vite Project
 Install Dependencies
       ↓
 Start React Application
+
 Phase 2 – Basic UI
+--------------------
+
 Create App
      ↓
 Create Navbar
@@ -1158,7 +1171,10 @@ Create Navbar
 Create Home Page
      ↓
 Create Basic CSS
+
 Phase 3 – Routing
+-------------------
+
 Install React Router
         ↓
 Create Routes
@@ -1166,7 +1182,10 @@ Create Routes
 Create Multiple Pages
         ↓
 Connect Navigation
+
 Phase 4 – Authentication
+-------------------------
+
 Register
    ↓
 Login
@@ -1176,7 +1195,9 @@ Logout
 Authentication
    ↓
 Protected Routes
+
 Phase 5 – Backend Integration
+-----------------------------
 Create db.json
        ↓
 Install JSON Server
@@ -1184,7 +1205,10 @@ Install JSON Server
 Create Axios Service
        ↓
 Connect React with API
+
 Phase 6 – Job Management
+--------------------------
+
 Fetch Jobs
     ↓
 Display Jobs
@@ -1196,7 +1220,10 @@ Add Job
 Edit Job
     ↓
 Delete Job
+
 Phase 7 – Redux
+----------------
+
 Install Redux Toolkit
        ↓
 Create Store
@@ -1208,7 +1235,9 @@ Connect Provider
 Save Jobs
        ↓
 Saved Jobs Page
+
 Phase 8 – Career Management
+---------------------------
 Dashboard
     ↓
 Application Tracker
@@ -1222,7 +1251,10 @@ Career Analytics
 Career Roadmap
     ↓
 Profile
+
 Phase 9 – UI Improvements
+-------------------------
+
 Custom CSS
      ↓
 Professional Layout
@@ -1232,7 +1264,10 @@ Cards and Sections
 Responsive Design
      ↓
 Mobile Support
+
+
 🔄 Complete Application Flow
+
                          JOB CONNECT
                               |
                 ┌─────────────┴─────────────┐
@@ -1264,6 +1299,9 @@ Mobile Support
           |                        |
        Timeline              Analytics
                               Roadmap
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
 ⚠️ Challenges Faced During Development
 
 While developing JobConnect, several challenges were encountered.
