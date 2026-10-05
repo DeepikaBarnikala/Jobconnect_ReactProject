@@ -1751,26 +1751,47 @@ Complete Application
 Through JobConnect, I gained practical experience in:
 
 React.js
+
 JavaScript
+
 JSX
+
 React Hooks
+
 State management
+
 Props
+
 Component architecture
+
 React Router
+
 Authentication
+
 Protected routes
+
 Axios
+
 REST APIs
+
 JSON Server
+
 CRUD operations
+
 Redux Toolkit
+
 Forms
+
 Validation
+
 Error handling
+
 Responsive CSS
+
 Debugging
+
 Git
+
 GitHub
 
 
@@ -1779,72 +1800,119 @@ GitHub
 The current project can be expanded significantly in the future.
 
 Backend
+
 Node.js backend
+
 Express.js
+
 MongoDB
+
 PostgreSQL
+
 Real REST API
+
 Server-side validation
+
 Authentication
+
 JWT authentication
+
 Password hashing
+
 Email verification
+
 Forgot password
+
 Reset password
+
 Role-based authorization
+
 User Roles
 
 Separate roles can be introduced:
 
 Job Seeker
+
 Recruiter
+
 Administrator
+
 Job Search
 
 Future versions can include:
 
 Advanced search
+
 Multiple filters
+
 Salary filtering
+
 Location filtering
+
 Experience filtering
+
 Job-type filtering
+
 Work-mode filtering
+
 Category filtering
+
 Job recommendations
+
 Resume Features
 
 Future versions could include:
 
 Resume upload
+
 Resume builder
+
 Resume parsing
+
 ATS analysis
+
 Resume recommendations
+
 Notifications
 
 Future versions could include:
 
 Email notifications
+
 Application status notifications
+
 Interview reminders
+
 Job alerts
+
 Recruiter messages
+
 Deployment
+
 
 The application can eventually be deployed using:
 
 Frontend
+
    ↓
+   
 Cloud Hosting
 
+
 Backend
+
    ↓
+   
 Cloud Server
 
+
 Database
+
    ↓
+   
 Cloud Database
+
+
 🏆 Project Outcome
 
 JobConnect successfully demonstrates how a React.js application can grow from a basic interface into a larger application containing multiple interconnected features.
@@ -1877,36 +1945,59 @@ The main focus was not only to create a working interface, but also to understan
 
 The project demonstrates practical implementation of concepts learned during React.js development.
 
+
 📌 Project Highlights
+
 Area	Implementation
+
 Frontend	React.js
+
 Build Tool	Vite
+
 Language	JavaScript
+
 Styling	CSS
+
 Routing	React Router DOM
+
 State Management	Redux Toolkit
+
 API Client	Axios
+
 Backend	JSON Server
+
 Data Storage	db.json
+
 Authentication	Login/Register flow
+
 Authorization	Protected Routes
+
 Database Operations	CRUD
+
 UI	Responsive Custom CSS
+
 Version Control	Git
+
 Repository	GitHub
+
 ▶️ Quick Start
 
 If you already have Node.js installed, the project can be started using the following commands.
 
 Terminal 1
+
 npm install
+
 npm run dev
+
 Terminal 2
+
 npx json-server --watch db.json --port 3000
 
 Then open:
 
 http://localhost:5173
+
 📌 Important Note
 
 JobConnect currently uses JSON Server and db.json for backend simulation and development.
@@ -1916,27 +2007,41 @@ It should not be considered a production-ready backend.
 The project is structured so that the API layer can later be replaced with a real backend without completely rebuilding the React frontend.
 
 👨‍💻 Author
+
 Deepika Barnikala
 
 React.js Developer | Software Development Learner
 
 💼 Project
+
 JobConnect
 
 Job Portal & Career Management Application
 
 🛠️ Built With
+
 React.js
+
 JavaScript
+
 HTML
+
 CSS
+
 Vite
+
 React Router DOM
+
 Redux Toolkit
+
 Axios
+
 JSON Server
+
 Git
+
 GitHub
+
 ⭐ Final Note
 
 JobConnect represents my practical journey of learning React.js and applying different frontend development concepts in one complete project.
@@ -1944,17 +2049,29 @@ JobConnect represents my practical journey of learning React.js and applying dif
 The project helped me understand how to move from individual concepts to a complete application by following the development process:
 
 Learn
+
   ↓
+  
 Build
+
   ↓
+  
 Test
+
   ↓
+  
 Debug
+
   ↓
+  
 Improve
+
   ↓
+  
 Rebuild
+
   ↓
+  
 Understand
 
 "Turning ideas into working projects — one line of code at a time." 💻
@@ -1989,6 +2106,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- 
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
 ## React Compiler
