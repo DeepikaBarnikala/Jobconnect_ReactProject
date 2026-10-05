@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
@@ -36,8 +35,12 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // Candidate / Employer role
+  const [role, setRole] = useState("candidate");
+
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState(false);
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -49,7 +52,8 @@ function Register() {
     rule.test(password)
   ).length;
 
-  const passwordIsStrong = passedRules === passwordRules.length;
+  const passwordIsStrong =
+    passedRules === passwordRules.length;
 
   const strengthLabel =
     password.length === 0
@@ -79,17 +83,23 @@ function Register() {
     }
 
     if (!emailRegex.test(normalizedEmail)) {
-      setError("Please enter a valid email address, such as name@example.com.");
+      setError(
+        "Please enter a valid email address, such as name@example.com."
+      );
       return;
     }
 
     if (!passwordIsStrong) {
-      setError("Your password is weak. Please complete all password requirements.");
+      setError(
+        "Your password is weak. Please complete all password requirements."
+      );
       return;
     }
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match. Please check and try again.");
+      setError(
+        "Passwords do not match. Please check and try again."
+      );
       return;
     }
 
@@ -99,11 +109,15 @@ function Register() {
       const response = await api.get("/users");
 
       const existingUser = response.data.find(
-        (user) => user.email?.trim().toLowerCase() === normalizedEmail
+        (user) =>
+          user.email?.trim().toLowerCase() ===
+          normalizedEmail
       );
 
       if (existingUser) {
-        setError("An account with this email already exists. Please log in.");
+        setError(
+          "An account with this email already exists. Please log in."
+        );
         return;
       }
 
@@ -111,15 +125,23 @@ function Register() {
         name: trimmedName,
         email: normalizedEmail,
         password,
+
+        // IMPORTANT:
+        // Save the selected account role.
+        role,
       });
 
-      setSuccess("Registration successful! Redirecting to login...");
+      setSuccess(
+        "Registration successful! Redirecting to login..."
+      );
 
       setTimeout(() => {
         navigate("/login");
       }, 1200);
+
     } catch (err) {
       console.error("Registration error:", err);
+
       setError(
         "Unable to create your account right now. Please check your API server and try again."
       );
@@ -130,62 +152,202 @@ function Register() {
 
   return (
     <div className="auth-page">
-      <div className="auth-card register-card">
-        <div className="auth-heading">
-          <div className="auth-logo">J</div>
 
-          <h2>Create your JobConnect account</h2>
+      <div className="auth-card register-card">
+
+        <div className="auth-heading">
+
+          <div className="auth-logo">
+            J
+          </div>
+
+          <h2>
+            Create your JobConnect account
+          </h2>
 
           <p>
             Join JobConnect and organize your career journey.
           </p>
+
         </div>
 
-        <form onSubmit={handleRegister} noValidate>
+        <form
+          onSubmit={handleRegister}
+          noValidate
+        >
+
+          {/* FULL NAME */}
+
           <div className="form-group">
-            <label htmlFor="register-name">Full Name</label>
+
+            <label htmlFor="register-name">
+              Full Name
+            </label>
 
             <input
               id="register-name"
               type="text"
               placeholder="Enter your full name"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) =>
+                setName(e.target.value)
+              }
               autoComplete="name"
               required
             />
+
           </div>
 
+          {/* EMAIL */}
+
           <div className="form-group">
-            <label htmlFor="register-email">Email Address</label>
+
+            <label htmlFor="register-email">
+              Email Address
+            </label>
 
             <input
               id="register-email"
               type="email"
               placeholder="name@example.com"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) =>
+                setEmail(e.target.value)
+              }
               autoComplete="email"
               required
             />
 
-            {email.length > 0 && !emailRegex.test(normalizedEmail) && (
-              <small className="validation-hint">
-                Enter a valid email format, for example name@example.com.
-              </small>
-            )}
+            {email.length > 0 &&
+              !emailRegex.test(normalizedEmail) && (
+                <small className="validation-hint">
+                  Enter a valid email format, for example
+                  name@example.com.
+                </small>
+              )}
+
           </div>
 
+          {/* ACCOUNT TYPE */}
+
           <div className="form-group">
-            <label htmlFor="register-password">Password</label>
+
+            <label>
+              Choose your account type
+            </label>
+
+            <div className="account-role-selection">
+
+              {/* JOB SEEKER */}
+
+              <button
+                type="button"
+                className={`account-role-card ${
+                  role === "candidate"
+                    ? "account-role-card-active"
+                    : ""
+                }`}
+                onClick={() => {
+                  setRole("candidate");
+                  setError("");
+                }}
+                aria-pressed={role === "candidate"}
+              >
+
+                <span className="account-role-icon">
+                  👤
+                </span>
+
+                <span className="account-role-content">
+
+                  <strong>
+                    I'm a Job Seeker
+                  </strong>
+
+                  <small>
+                    Find jobs, save opportunities and
+                    manage your career.
+                  </small>
+
+                </span>
+
+                <span className="account-role-check">
+                  {role === "candidate" ? "✓" : ""}
+                </span>
+
+              </button>
+
+              {/* RECRUITER */}
+
+              <button
+                type="button"
+                className={`account-role-card ${
+                  role === "employer"
+                    ? "account-role-card-active"
+                    : ""
+                }`}
+                onClick={() => {
+                  setRole("employer");
+                  setError("");
+                }}
+                aria-pressed={role === "employer"}
+              >
+
+                <span className="account-role-icon">
+                  🏢
+                </span>
+
+                <span className="account-role-content">
+
+                  <strong>
+                    I'm an Active Recruiter
+                  </strong>
+
+                  <small>
+                    Post jobs and connect with talented
+                    candidates.
+                  </small>
+
+                </span>
+
+                <span className="account-role-check">
+                  {role === "employer" ? "✓" : ""}
+                </span>
+
+              </button>
+
+            </div>
+
+            <div className="selected-role-message">
+              {role === "candidate"
+                ? "Job Seeker account selected"
+                : "Recruiter account selected"}
+            </div>
+
+          </div>
+
+          {/* PASSWORD */}
+
+          <div className="form-group">
+
+            <label htmlFor="register-password">
+              Password
+            </label>
 
             <div className="password-input-wrapper">
+
               <input
                 id="register-password"
-                type={showPassword ? "text" : "password"}
+                type={
+                  showPassword
+                    ? "text"
+                    : "password"
+                }
                 placeholder="Create a strong password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
                 autoComplete="new-password"
                 required
               />
@@ -193,15 +355,25 @@ function Register() {
               <button
                 type="button"
                 className="password-toggle"
-                onClick={() => setShowPassword((prev) => !prev)}
+                onClick={() =>
+                  setShowPassword((prev) => !prev)
+                }
               >
-                {showPassword ? "Hide" : "Show"}
+                {showPassword
+                  ? "Hide"
+                  : "Show"}
               </button>
+
             </div>
 
             <div className="password-strength">
+
               <div className="strength-heading">
-                <span>Password strength</span>
+
+                <span>
+                  Password strength
+                </span>
+
                 <strong
                   className={
                     passedRules === 5
@@ -213,46 +385,72 @@ function Register() {
                 >
                   {strengthLabel}
                 </strong>
+
               </div>
 
               <div className="strength-track">
+
                 <div
                   className={`strength-fill strength-level-${passedRules}`}
                 />
+
               </div>
+
             </div>
 
             <div className="password-rules">
+
               {passwordRules.map((rule) => {
+
                 const passed = rule.test(password);
 
                 return (
                   <div
                     className={`password-rule ${
-                      passed ? "rule-passed" : "rule-pending"
+                      passed
+                        ? "rule-passed"
+                        : "rule-pending"
                     }`}
                     key={rule.label}
                   >
-                    <span>{passed ? "✓" : "○"}</span>
+
+                    <span>
+                      {passed ? "✓" : "○"}
+                    </span>
+
                     {rule.label}
+
                   </div>
                 );
+
               })}
+
             </div>
+
           </div>
 
+          {/* CONFIRM PASSWORD */}
+
           <div className="form-group">
+
             <label htmlFor="register-confirm-password">
               Confirm Password
             </label>
 
             <div className="password-input-wrapper">
+
               <input
                 id="register-confirm-password"
-                type={showConfirmPassword ? "text" : "password"}
+                type={
+                  showConfirmPassword
+                    ? "text"
+                    : "password"
+                }
                 placeholder="Re-enter your password"
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={(e) =>
+                  setConfirmPassword(e.target.value)
+                }
                 autoComplete="new-password"
                 required
               />
@@ -261,11 +459,16 @@ function Register() {
                 type="button"
                 className="password-toggle"
                 onClick={() =>
-                  setShowConfirmPassword((prev) => !prev)
+                  setShowConfirmPassword(
+                    (prev) => !prev
+                  )
                 }
               >
-                {showConfirmPassword ? "Hide" : "Show"}
+                {showConfirmPassword
+                  ? "Hide"
+                  : "Show"}
               </button>
+
             </div>
 
             {confirmPassword.length > 0 && (
@@ -281,33 +484,54 @@ function Register() {
                   : "Passwords do not match."}
               </small>
             )}
+
           </div>
 
+          {/* ERROR */}
+
           {error && (
-            <div className="auth-message auth-error" role="alert">
+            <div
+              className="auth-message auth-error"
+              role="alert"
+            >
               {error}
             </div>
           )}
 
+          {/* SUCCESS */}
+
           {success && (
-            <div className="auth-message auth-success" role="status">
+            <div
+              className="auth-message auth-success"
+              role="status"
+            >
               {success}
             </div>
           )}
+
+          {/* SUBMIT */}
 
           <button
             type="submit"
             className="auth-submit-btn"
             disabled={loading}
           >
-            {loading ? "Creating Account..." : "Create Account"}
+            {loading
+              ? "Creating Account..."
+              : "Create Account"}
           </button>
+
         </form>
 
         <p className="auth-footer">
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account?{" "}
+          <Link to="/login">
+            Login
+          </Link>
         </p>
+
       </div>
+
     </div>
   );
 }

@@ -16,25 +16,72 @@ import CareerRoadmap from "../pages/CareerRoadmap";
 import ApplicationTracker from "../pages/ApplicationTracker";
 import InterviewScheduler from "../pages/InterviewScheduler";
 import ApplicationTimeline from "../pages/ApplicationTimeline";
+
 import ProtectedRoute from "../components/Protectedroute";
+
 import CareerAnalytics from "../pages/CareerAnalytics";
 
 function AppRoutes() {
   return (
     <Routes>
-      {/* Public Routes */}
-      <Route path="/" element={<Home />} />
-      <Route path="/jobs" element={<Jobs />} />
-      <Route path="/jobs/:id" element={<JobDetails />} />
 
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
+      {/* =========================================
+          PUBLIC HOME PAGE
+      ========================================= */}
 
-      {/* Job Management */}
+      <Route
+        path="/"
+        element={<Home />}
+      />
+
+      {/* =========================================
+          AUTHENTICATION
+      ========================================= */}
+
+      <Route
+        path="/register"
+        element={<Register />}
+      />
+
+      <Route
+        path="/login"
+        element={<Login />}
+      />
+
+      {/* =========================================
+          JOBS
+          Login required
+      ========================================= */}
+
+      <Route
+        path="/jobs"
+        element={
+          <ProtectedRoute>
+            <Jobs />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/jobs/:id"
+        element={
+          <ProtectedRoute>
+            <JobDetails />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* =========================================
+          JOB MANAGEMENT
+          Employer/Admin only
+      ========================================= */}
+
       <Route
         path="/add-job"
         element={
-          <ProtectedRoute>
+          <ProtectedRoute
+            allowedRoles={["employer", "admin"]}
+          >
             <AddJob />
           </ProtectedRoute>
         }
@@ -43,13 +90,31 @@ function AppRoutes() {
       <Route
         path="/edit-job/:id"
         element={
-          <ProtectedRoute>
+          <ProtectedRoute
+            allowedRoles={["employer", "admin"]}
+          >
             <AddJob />
           </ProtectedRoute>
         }
       />
 
-      {/* Dashboard */}
+      {/* =========================================
+          SAVED JOBS
+      ========================================= */}
+
+      <Route
+        path="/saved-jobs"
+        element={
+          <ProtectedRoute>
+            <SavedJobs />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* =========================================
+          DASHBOARD
+      ========================================= */}
+
       <Route
         path="/dashboard"
         element={
@@ -58,17 +123,11 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      {/* saved jobs */}
-      <Route
-        path="/saved-jobs"
-        element={
-          <ProtectedRoute>
-            <SavedJobs />
-          </ProtectedRoute>
-        }
-     />
 
-      {/* Profile */}
+      {/* =========================================
+          PROFILE
+      ========================================= */}
+
       <Route
         path="/profile"
         element={
@@ -78,7 +137,10 @@ function AppRoutes() {
         }
       />
 
-      {/* Career Roadmap */}
+      {/* =========================================
+          CAREER ROADMAP
+      ========================================= */}
+
       <Route
         path="/career-roadmap"
         element={
@@ -88,7 +150,10 @@ function AppRoutes() {
         }
       />
 
-      {/* Application Tracker */}
+      {/* =========================================
+          APPLICATION TRACKER
+      ========================================= */}
+
       <Route
         path="/applications"
         element={
@@ -98,7 +163,10 @@ function AppRoutes() {
         }
       />
 
-      {/* Interview Scheduler */}
+      {/* =========================================
+          INTERVIEW SCHEDULER
+      ========================================= */}
+
       <Route
         path="/interviews"
         element={
@@ -107,8 +175,11 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-     
-     {/* Application-timeline */}
+
+      {/* =========================================
+          APPLICATION TIMELINE
+      ========================================= */}
+
       <Route
         path="/application-timeline"
         element={
@@ -117,7 +188,11 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      {/* Career-Analytics */}
+
+      {/* =========================================
+          CAREER ANALYTICS
+      ========================================= */}
+
       <Route
         path="/career-analytics"
         element={
@@ -126,6 +201,7 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+
     </Routes>
   );
 }
